@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E"
+    android:paddingBottom="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dead Man's Switch"
+            android:textColor="#E94560"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scheduled check-ins with emergency actions"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STATUS: DISARMED"
+            android:textColor="#E94560"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvNextCheckin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Arm the switch to begin monitoring"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textColor="#E94560"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etIntervalHours"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:hint="Check-in interval (hours)"
+            android:textColorHint="#666666"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#16213E"
+            android:inputType="number"
+            android:padding="12dp"
+            android:text="24"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etEmergencyContact"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:hint="Emergency phone number"
+            android:textColorHint="#666666"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#16213E"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etEmergencyMessage"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:hint="Emergency message"
+            android:textColorHint="#666666"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#16213E"
+            android:inputType="text"
+            android:padding="12dp"
+            android:text="Dead Man's Switch activated! Please check on me."
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etWebhookUrl"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:hint="Webhook URL (optional)"
+            android:textColorHint="#666666"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#16213E"
+            android:inputType="textUri"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnArm"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="ARM SWITCH"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0F3460"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnDisarm"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="DISARM"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:backgroundTint="#E94560"
+                android:layout_marginStart="4dp"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="CHECK IN NOW"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:backgroundTint="#00AA00"
+            android:layout_marginBottom="8dp"
+            android:enabled="false" />
+
+        <Button
+            android:id="@+id/btnTestActions"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Test Emergency Actions"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:backgroundTint="#16213E"
+            android:layout_marginBottom="12dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            android:indeterminateTint="#E94560"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity Log"
+            android:textColor="#E94560"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <ScrollView
+            android:id="@+id/scrollLog"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#0F3460"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No log entries yet."
+                android:textColor="#CCCCCC"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="2dp" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnAbout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="12dp"
+            android:text="About"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:backgroundTint="#E94560" />
+
+    </LinearLayout>
+</ScrollView>

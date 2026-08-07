@@ -1,0 +1,2 @@
+rootProject.name = "DeadMansSwitch"
+include ':app'
