@@ -1,0 +1,21 @@
+=== Dead Man's Switch v1.0.0 ===
+- Created Android project for scheduled check-ins with emergency actions
+- SwitchService: Foreground service with periodic deadline checking (60s interval)
+- Configurable check-in interval (1-720 hours, default 24h)
+- Emergency actions: SMS to emergency contact, webhook POST with JSON payload
+- Manual check-in button to reset the timer
+- Countdown display showing time remaining until deadline
+- OVERDUE detection with automatic emergency action triggering
+- BootReceiver: Auto-restarts monitoring after device reboot if switch was armed
+- SwitchStorage: SharedPreferences-based persistent storage for all settings and logs
+- Activity log with timestamps (last 10KB retained)
+- Test Emergency Actions button for verifying SMS/webhook without waiting
+- AboutActivity with version display, Check for Update, Share App
+- ErrorHandler with error codes, timestamps, stack traces, Toast notifications
+- DebugLogger with timestamped log output
+- Dark theme with #1A1A2E background, #E94560 accent
+- Bottom padding (80dp) to prevent button cutoff
+- GitHub Actions workflow for automated APK build and release
+- Keystore generated and stored as GitHub secret
+- Repository: https://github.com/jnetai-clawbot/DeadMansSwitch
+- Tag v1.0.0 pushed to trigger release build
